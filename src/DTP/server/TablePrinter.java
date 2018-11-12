@@ -1,19 +1,13 @@
 package DTP.server;
 
 import DTP.server.database.DataConnect;
-import java.sql.SQLException;
+
 import java.sql.ResultSet;
-import java.util.*;
+import java.sql.SQLException;
 
+public class TablePrinter {
 
-
-public class Main {
-
-    public static Scanner kbd = new Scanner(System.in);
-
-
-
-    /*/prints the Account table from the database.
+    //prints the Account table from the database.
     public static void PrintResultAccount(String query) throws SQLException {
 
         try {
@@ -81,53 +75,7 @@ public class Main {
         }
         System.out.println(" ");
     }
-*/
-    /* /The Menu
-    public static void Menu() throws SQLException {
-        int choice = 1;
-        String query;
-
-        while(choice != 0) {
-            System.out.println("(1) Print Account Table. \n(2) Print Games Table.");
-            System.out.println("(3) Print HighScore Table. \n(4) Write a query. \n(0) Exit");
-            choice = kbd.nextInt();
-
-            switch (choice) {
-                case 1:
-                    System.out.println("Printing Account Table");
-                    query = "SELECT * from account";
-                    PrintResultAccount(query);
-                    break;
-                case 2:
-                    System.out.println("Printing Games Table");
-                    query = "SELECT * from games";
-                    PrintResultGames(query);
-                    break;
-                case 3:
-                    System.out.println("Printing HighScore Table");
-                    query = "SELECT * from highscore";
-                    PrintResultScore(query);
-                    break;
-                case 4:
-                    System.out.println("Write your query below.");
-                    query = kbd.nextLine();
-                    break;
-                default:
-                    break;
-            }
-        }
-    }
-    */
 
 
-    public static void main(String[] args) throws SQLException {
 
-        DataConnect connection = new DataConnect();
-        connection.connect();
-
-        Menu.ShowMenu();
-
-        connection.disconnect();
-
-    }
 }

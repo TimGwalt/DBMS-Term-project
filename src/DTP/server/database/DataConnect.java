@@ -48,9 +48,4 @@ public class DataConnect {
            e.printStackTrace();
        }
     }
-
-
-
-
-
 }
