@@ -1,31 +1,27 @@
 package DTP.server.database;
 
-import java.sql.*;
-import java.util.*;
-
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
 
 public class DataConnect {
 
-    //Vars
-    static Scanner kbd = new Scanner(System.in);
-    static String url = "jdbc:postgresql://localhost:5432/DTP.server";
-
     // database vars
-    public static Connection conn = null;
+    public static Connection conn;
     public static Statement state = null;
     public static ResultSet result = null;
 
     // create connection
-    public static int connect(String username, String password) {
+    public static void connect(String username, String password) {
         try {
-
+            String url = "jdbc:postgresql://localhost:5432/DTP.server";
             conn = DriverManager.getConnection(url, username, password);
             System.out.println("Connected to database");
-            return 1;
 
         } catch (SQLException e) {
             System.out.println("Connection failed.");
-            return 0;
         }
     }
 

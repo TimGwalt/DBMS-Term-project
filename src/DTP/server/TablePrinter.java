@@ -5,10 +5,10 @@ import DTP.server.database.DataConnect;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
-public class TablePrinter {
+class TablePrinter {
 
     //prints the Account table from the database.
-    public static void PrintResultAccount(String query) throws SQLException {
+    static void PrintResultAccount(String query) throws SQLException {
 
         try {
             DataConnect.state = DataConnect.conn.createStatement();
@@ -32,7 +32,7 @@ public class TablePrinter {
     }
 
     //prints the Games table from that database.
-    public static void PrintResultGames(String query) throws SQLException {
+    static void PrintResultGames(String query) throws SQLException {
 
         try {
             DataConnect.state = DataConnect.conn.createStatement();
@@ -55,7 +55,7 @@ public class TablePrinter {
     }
 
     //prints the HighScore table from the database.
-    public static void PrintResultScore(String query) throws SQLException {
+    static void PrintResultScore(String query) throws SQLException {
 
         try {
             DataConnect.state = DataConnect.conn.createStatement();

@@ -4,13 +4,13 @@ import java.sql.SQLException;
 import java.util.Scanner;
 
 
-public class Menu {
+class Menu {
 
-    public static Scanner kbd = new Scanner(System.in);
+    private static Scanner kbd = new Scanner(System.in);
 
 
     //The Menu
-    public static void ShowMenu() throws SQLException {
+    static void ShowMenu() throws SQLException {
         int choice = 1;
         String query;
 
