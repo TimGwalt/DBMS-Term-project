@@ -75,7 +75,4 @@ public class TablePrinter {
         }
         System.out.println(" ");
     }
-
-
-
 }
