@@ -12,7 +12,7 @@ class Menu {
     //The Menu
     static void ShowMenu() throws SQLException {
         int choice = 1;
-        String query;
+        String query, game;
 
         while(choice != 0) {
             System.out.println("(1) Print Account Table. \n(2) Print Games Table.");
@@ -36,10 +36,13 @@ class Menu {
                     TablePrinter.PrintResultScore(query);
                     break;
                 case 4:
-                    System.out.println("Write your query below.");
-                    //query = kbd.nextLine();
+                    System.out.println("What Game would you like to view the players for?");
+                    game = kbd.nextLine();
+                    query = "SELECT gamertag from account where f_game = '" + game + "'";
+                    TablePrinter.PlayersOfGames(query);
                     break;
                 default:
+                    System.out.println("Invalid Option.");
                     break;
             }
         }

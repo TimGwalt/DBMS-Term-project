@@ -20,6 +20,7 @@ class TablePrinter {
 
         ResultSet result = DataConnect.result;
 
+        //Printing each row.
         while(DataConnect.result.next()) {
             String fName = result.getString("fname");
             String lName = result.getString("lname");
@@ -44,6 +45,7 @@ class TablePrinter {
 
         ResultSet result = DataConnect.result;
 
+        //Printing each row.
         while(DataConnect.result.next()) {
             String gameName = result.getString("game_name");
             String developer = result.getString("developer");
@@ -67,6 +69,7 @@ class TablePrinter {
 
         ResultSet result = DataConnect.result;
 
+        //Printing each row.
         while(DataConnect.result.next()) {
             String gameName = result.getString("game_name");
             String gTag = result.getString("gamertag");
@@ -74,5 +77,26 @@ class TablePrinter {
             System.out.format("%s, %s, %s\n", gameName, gTag,score);
         }
         System.out.println(" ");
+    }
+
+    //Prints the names of the players playing a specified game.
+    static void PlayersOfGames(String query) throws SQLException {
+        try {
+            DataConnect.state = DataConnect.conn.createStatement();
+            DataConnect.result = DataConnect.state.executeQuery(query);
+        }
+        catch (SQLException e) {
+            e.printStackTrace();
+        }
+
+        ResultSet result = DataConnect.result;
+
+        //Printing each row.
+        while(DataConnect.result.next()) {
+            String gamerTag = result.getString("gamertag");
+            System.out.format("%s\n", gamerTag);
+        }
+        System.out.println(" ");
+
     }
 }
