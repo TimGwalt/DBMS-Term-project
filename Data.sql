@@ -3,7 +3,7 @@ CREATE TABLE Account
 (
     fname character varying(10),
     lname character varying(15),
-    gamertag character varying(10),
+    gamertag character varying(15),
     email character varying(25),
     f_game character varying(25),
     CONSTRAINT Account_pkey PRIMARY KEY(gamertag)
@@ -22,7 +22,7 @@ CREATE TABLE Highscore
 (
     gamertag character varying(25),
     game_name character varying(25),
-    score integer NOT NULL,
+    score integer NOT NULL
 );
 
 INSERT INTO Account VALUES ('Pen', 'Raines', 'Pentogood', 'PTGood92@email.com', 'Halo 3');
@@ -54,18 +54,18 @@ INSERT INTO Games VALUES ('PacMan', 'Namco', 'Arcade', 'E');
 INSERT INTO Games VALUES ('Tetris', 'Various', 'Puzzle', 'E');
 
 
-INSERT INTO Highscore VALUES ('Pentogood', 'Halo 3', '47,237');
+INSERT INTO Highscore VALUES ('Pentogood', 'Halo 3', '47237');
 INSERT INTO Highscore VALUES ('DexterT2235', 'PacMan', '930450');
 INSERT INTO Highscore VALUES ('EDab72', 'Tetris', '539200');
 INSERT INTO Highscore VALUES ('LawDoc', 'Super Mario Bros', '765000');
 INSERT INTO Highscore VALUES ('WeavR', 'H1Z1', '45');
 INSERT INTO Highscore VALUES ('Mr. Trum', 'Kingdom Hearts', '238500');
 INSERT INTO Highscore VALUES ('BWood2001', 'Call of Duty: Black Ops', '55');
-INSERT INTO Highscore VALUES ('GoveShel', 'Sonic The Hedghog', '654090');
+INSERT INTO Highscore VALUES ('GoveShel', 'Sonic The Hedgehog', '654090');
 INSERT INTO Highscore VALUES ('MLove', 'War Thunder', '23456');
 INSERT INTO Highscore VALUES ('GiffyL22', 'Kingdom Hearts', '245900');
 INSERT INTO Highscore VALUES ('KSincK', 'Geometry Wars 3', '49206350'); 
-INSERT INTO Highscore VALUES ('JaneC', 'Tertis', '649234');
+INSERT INTO Highscore VALUES ('JaneC', 'H1Z1', '123');
 INSERT INTO Highscore VALUES ('MBates', 'PacMan', '897364');
 INSERT INTO Highscore VALUES ('Gibs', 'Super Mario Bros', '876400');
 INSERT INTO Highscore VALUES ('Nickles son', 'Geometry Wars 3', '31203175');

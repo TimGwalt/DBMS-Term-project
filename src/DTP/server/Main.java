@@ -10,7 +10,7 @@ public class Main {
 
 
     //Logs a user into the database
-    private static void login() {
+    private static boolean login() {
         String username, password;
 
         System.out.print("Please sign in. \nUsername: ");
@@ -19,14 +19,16 @@ public class Main {
         System.out.print("Password: ");
         password = kbd.nextLine();
 
-        DataConnect.connect(username, password);
+        return DataConnect.connect(username, password);
     }
 
 
     public static void main(String[] args) throws SQLException {
 
-        login();
-        Menu.ShowMenu();
+        if (login() == true) {
+            Menu.ShowMenu();
+        }
+
 
         DataConnect.disconnect();
 

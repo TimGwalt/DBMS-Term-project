@@ -14,14 +14,16 @@ public class DataConnect {
     public static ResultSet result = null;
 
     // create connection
-    public static void connect(String username, String password) {
+    public static Boolean connect(String username, String password) {
         try {
             String url = "jdbc:postgresql://localhost:5432/DTP.server";
             conn = DriverManager.getConnection(url, username, password);
             System.out.println("Connected to database");
+            return true;
 
         } catch (SQLException e) {
             System.out.println("Connection failed.");
+            return false;
         }
     }
 

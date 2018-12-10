@@ -24,17 +24,17 @@ class Menu {
                     System.out.println("Closing Connection.");
                     break;
                 case 1:
-                    System.out.println("Printing Account Table");
+                    System.out.println("Printing Account Table:");
                     query = "SELECT * from account";
                     TablePrinter.PrintResultAccount(query);
                     break;
                 case 2:
-                    System.out.println("Printing Games Table");
+                    System.out.println("Printing Games Table:");
                     query = "SELECT * from games";
                     TablePrinter.PrintResultGames(query);
                     break;
                 case 3:
-                    System.out.println("Printing HighScore Table");
+                    System.out.println("Printing HighScore Table:");
                     query = "SELECT * from highscore";
                     TablePrinter.PrintResultScore(query);
                     break;
