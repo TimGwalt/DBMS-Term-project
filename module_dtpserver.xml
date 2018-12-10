@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="module_dtpserver" default="compile.module.dtpserver">
+  <dirname property="module.dtpserver.basedir" file="${ant.file.module_dtpserver}"/>
+  
+  <property name="module.jdk.home.dtpserver" value="${project.jdk.home}"/>
+  <property name="module.jdk.bin.dtpserver" value="${project.jdk.bin}"/>
+  <property name="module.jdk.classpath.dtpserver" value="${project.jdk.classpath}"/>
+  
+  <property name="compiler.args.dtpserver" value="-encoding UTF-8 -source 8 -target 8 ${compiler.args}"/>
+  
+  <property name="dtpserver.output.dir" value="${module.dtpserver.basedir}/out/production/DTPServer"/>
+  <property name="dtpserver.testoutput.dir" value="${module.dtpserver.basedir}/out/test/DTPServer"/>
+  
+  <path id="dtpserver.module.bootclasspath">
+    <!-- Paths to be included in compilation bootclasspath -->
+  </path>
+  
+  <path id="dtpserver.module.production.classpath">
+    <path refid="${module.jdk.classpath.dtpserver}"/>
+    <path refid="library.postgresql-42.2.5.classpath"/>
+  </path>
+  
+  <path id="dtpserver.runtime.production.module.classpath">
+    <pathelement location="${dtpserver.output.dir}"/>
+    <path refid="library.postgresql-42.2.5.classpath"/>
+  </path>
+  
+  <path id="dtpserver.module.classpath">
+    <path refid="${module.jdk.classpath.dtpserver}"/>
+    <pathelement location="${dtpserver.output.dir}"/>
+    <path refid="library.postgresql-42.2.5.classpath"/>
+  </path>
+  
+  <path id="dtpserver.runtime.module.classpath">
+    <pathelement location="${dtpserver.testoutput.dir}"/>
+    <pathelement location="${dtpserver.output.dir}"/>
+    <path refid="library.postgresql-42.2.5.classpath"/>
+  </path>
+  
+  
+  <patternset id="excluded.from.module.dtpserver">
+    <patternset refid="ignored.files"/>
+  </patternset>
+  
+  <patternset id="excluded.from.compilation.dtpserver">
+    <patternset refid="excluded.from.module.dtpserver"/>
+  </patternset>
+  
+  <path id="dtpserver.module.sourcepath">
+    <dirset dir="${module.dtpserver.basedir}">
+      <include name="src"/>
+    </dirset>
+  </path>
+  
+  
+  <target name="compile.module.dtpserver" depends="compile.module.dtpserver.production,compile.module.dtpserver.tests" description="Compile module DTPServer"/>
+  
+  <target name="compile.module.dtpserver.production" depends="register.custom.compilers" description="Compile module DTPServer; production classes">
+    <mkdir dir="${dtpserver.output.dir}"/>
+    <javac2 destdir="${dtpserver.output.dir}" debug="${compiler.debug}" nowarn="${compiler.generate.no.warnings}" memorymaximumsize="${compiler.max.memory}" fork="true" executable="${module.jdk.bin.dtpserver}/javac">
+      <compilerarg line="${compiler.args.dtpserver}"/>
+      <bootclasspath refid="dtpserver.module.bootclasspath"/>
+      <classpath refid="dtpserver.module.production.classpath"/>
+      <src refid="dtpserver.module.sourcepath"/>
+      <patternset refid="excluded.from.compilation.dtpserver"/>
+    </javac2>
+    
+    <copy todir="${dtpserver.output.dir}">
+      <fileset dir="${module.dtpserver.basedir}/src">
+        <patternset refid="compiler.resources"/>
+        <type type="file"/>
+      </fileset>
+    </copy>
+  </target>
+  
+  <target name="compile.module.dtpserver.tests" depends="register.custom.compilers,compile.module.dtpserver.production" description="compile module DTPServer; test classes" unless="skip.tests"/>
+  
+  <target name="clean.module.dtpserver" description="cleanup module">
+    <delete dir="${dtpserver.output.dir}"/>
+    <delete dir="${dtpserver.testoutput.dir}"/>
+  </target>
+</project>

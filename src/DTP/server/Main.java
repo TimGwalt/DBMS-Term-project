@@ -16,8 +16,8 @@ public class Main {
         System.out.print("Please sign in. \nUsername: ");
         username  = kbd.nextLine();
 
-        //System.out.print("Password: ");
-        password = MaskPassword.getPassword("Password2: ");
+        System.out.print("Password: ");
+        password = kbd.nextLine();
 
         DataConnect.connect(username, password);
     }

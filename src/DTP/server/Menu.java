@@ -20,6 +20,9 @@ class Menu {
             choice = kbd.nextInt();
 
             switch (choice) {
+                case 0:
+                    System.out.println("Closing Connection.");
+                    break;
                 case 1:
                     System.out.println("Printing Account Table");
                     query = "SELECT * from account";

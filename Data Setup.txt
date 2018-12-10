@@ -1,0 +1,46 @@
+
+Accounts: (Fist Name, Last Name, Gamertag, Email, Favorate Game);
+------------------------------------------------------------------------------------------
+('Pen', 'Raines', 'Pentogood', 'PTGood92@email.com', 'Halo 3');
+('Dexter', 'Tash', 'DexterT2235', 'TashDe@email.com', 'PacMan');
+('Earle', 'Dabney', 'EDab72', 'EarleDabney@email.com', 'Tertis');
+('Lawrence', 'Doctor', 'LawDoc', 'DoctL@email.com', 'Super Mario Bros');
+('Ralf', 'Weaver', 'WeavR', 'weavr@email.com', 'H1Z1');
+('Truman', 'Michael', 'Mr. Trum', 'MichealTru@email.com', 'Kingdom Hearts');
+('Aileen', 'Blackwood', 'BWood2001', 'aibwood@email.com', 'Call of Duty: Black Ops');
+('Shel', 'Trengove', 'GoveShel', 'sheltrengove@email.com', 'Mario Party');
+('Miles', 'Love', 'MLove', 'mlove23@email.com', 'War Thunder');
+('Giffard', 'Long', 'GiffyL22', 'giffL22@email.com', 'Kingdom Hearts');
+('Kandi', 'Sinclair', 'KSincK', 'sinck@email.com', 'Geometry Wars 3'); 
+('Janessa', 'Cartwright', 'JaneC', 'cartwrightJ@email.com', 'Tertis');
+('Madeleine', 'Bates', 'MBates', 'bates@email.com', 'PacMan');
+('Wes', 'Gibson', 'Gibs', 'WesGibson@email.com', 'Super Mario Bros');
+('Darian', 'Nicholson', 'Nickles son', 'DarianNick@email.com', 'Geometry Wars 3');
+------------------------------------------------------------------------------------------
+
+Games: (Game Name, Developer, Genre, ESRB Rating);
+------------------------------------------------------------------------------------------
+('Geometry Wars 3','Lucid Games Limited','MultdirShooting','E')
+('Halo 3','Bungie','FPS','M')
+('Super Mario Bros','Nintendo','Platformer','E')
+('PacMan','Namco','Arcade','E')
+('Tetris','Various','Puzzle','E')
+------------------------------------------------------------------------------------------
+
+High Scores: (Gamertag, Game Name, Score);
+------------------------------------------------------------------------------------------
+('Pentogood', 'Halo 3', '47,237');
+('DexterT2235', 'PacMan', '930450');
+('EDab72', 'Tetris', '539200');
+('LawDoc', 'Super Mario Bros', '765000');
+('WeavR', 'H1Z1', '');
+('Mr. Trum', 'Kingdom Hearts', '238500');
+('BWood2001', 'Call of Duty: Black Ops', '55');
+('GoveShel', 'Mario Party', '');
+('MLove', 'War Thunder', '');
+('GiffyL22', 'Kingdom Hearts', '245900');
+('KSincK', 'Geometry Wars 3', '49206350'); 
+('JaneC', 'Tertis', '649234');
+('MBates', 'PacMan', '897364');
+('Gibs', 'Super Mario Bros', '876400');
+('Nickles son', 'Geometry Wars 3', '31203175');
