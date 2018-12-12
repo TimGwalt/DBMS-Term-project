@@ -1,6 +1,5 @@
 package DTP.server;
 
-import DTP.server.database.DataConnect;
 import java.sql.SQLException;
 import java.util.*;
 
@@ -25,12 +24,8 @@ public class Main {
 
     public static void main(String[] args) throws SQLException {
 
-        if (login() == true) {
+        if (login()) {
             Menu.ShowMenu();
         }
-
-
-        DataConnect.disconnect();
-
     }
 }

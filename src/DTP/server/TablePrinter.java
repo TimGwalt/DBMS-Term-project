@@ -1,15 +1,22 @@
-package DTP.server;
+/*
+    TablePrinter.java contains the methods for printing the tables of the database.
+ */
 
-import DTP.server.database.DataConnect;
+package DTP.server;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.Scanner;
 
 class TablePrinter {
 
-    //prints the Account table from the database.
-    static void PrintResultAccount(String query) throws SQLException {
+    private static Scanner kbd = new Scanner(System.in);
 
+    //prints the Account table from the database.
+    static void PrintResultAccount() throws SQLException {
+
+        System.out.println("Printing Account Table:");
+        String query = "SELECT * from account";
         try {
             DataConnect.state = DataConnect.conn.createStatement();
             DataConnect.result = DataConnect.state.executeQuery(query);
@@ -33,7 +40,10 @@ class TablePrinter {
     }
 
     //prints the Games table from that database.
-    static void PrintResultGames(String query) throws SQLException {
+    static void PrintResultGames() throws SQLException {
+
+        System.out.println("Printing Games Table:");
+        String query = "SELECT * from games";
 
         try {
             DataConnect.state = DataConnect.conn.createStatement();
@@ -57,7 +67,10 @@ class TablePrinter {
     }
 
     //prints the HighScore table from the database.
-    static void PrintResultScore(String query) throws SQLException {
+    static void PrintResultScore() throws SQLException {
+
+        System.out.println("Printing HighScore Table:");
+        String query = "SELECT * from highscore";
 
         try {
             DataConnect.state = DataConnect.conn.createStatement();
@@ -80,7 +93,11 @@ class TablePrinter {
     }
 
     //Prints the names of the players playing a specified game.
-    static void PlayersOfGames(String query) throws SQLException {
+    static void PlayersOfGames() throws SQLException {
+        System.out.println("What Game would you like to view the players for?");
+        String game = kbd.nextLine();
+        String query = "SELECT gamertag from Account where f_game = '" + game + "'";
+
         try {
             DataConnect.state = DataConnect.conn.createStatement();
             DataConnect.result = DataConnect.state.executeQuery(query);

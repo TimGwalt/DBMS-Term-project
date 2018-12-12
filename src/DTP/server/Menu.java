@@ -1,8 +1,12 @@
+/*
+    Menu.java contains the method for interacting with the menu.
+ */
+
+
 package DTP.server;
 
 import java.sql.SQLException;
 import java.util.Scanner;
-
 
 class Menu {
 
@@ -12,37 +16,40 @@ class Menu {
     //The Menu
     static void ShowMenu() throws SQLException {
         int choice = 1;
-        String query, game;
 
         while(choice != 0) {
-            System.out.println("(1) Print Account Table. \n(2) Print Games Table.");
-            System.out.println("(3) Print HighScore Table. \n(4) Write a query. \n(0) Exit");
+            System.out.println("(1) Print Account Table. \n(2) Print Games Table. \n(3) Print HighScore Table. ");
+            System.out.println("(4) Print players playing a game. \n(5) Add New Account \n(6) Add New Game");
+            System.out.println("(7) Add new High Score. \n(0) Exit.");
+
+
             choice = kbd.nextInt();
 
             switch (choice) {
                 case 0:
                     System.out.println("Closing Connection.");
+                    DataConnect.disconnect();
                     break;
                 case 1:
-                    System.out.println("Printing Account Table:");
-                    query = "SELECT * from account";
-                    TablePrinter.PrintResultAccount(query);
+                    TablePrinter.PrintResultAccount();
                     break;
                 case 2:
-                    System.out.println("Printing Games Table:");
-                    query = "SELECT * from games";
-                    TablePrinter.PrintResultGames(query);
+                    TablePrinter.PrintResultGames();
                     break;
                 case 3:
-                    System.out.println("Printing HighScore Table:");
-                    query = "SELECT * from highscore";
-                    TablePrinter.PrintResultScore(query);
+                    TablePrinter.PrintResultScore();
                     break;
                 case 4:
-                    System.out.println("What Game would you like to view the players for?");
-                    game = kbd.nextLine();
-                    query = "SELECT gamertag from account where f_game = '" + game + "'";
-                    TablePrinter.PlayersOfGames(query);
+                    TablePrinter.PlayersOfGames();
+                    break;
+                case 5:
+                    InsertMenu.insertAccount();
+                    break;
+                case 6:
+                    InsertMenu.insertGame();
+                    break;
+                case 7:
+                    InsertMenu.insertScore();
                     break;
                 default:
                     System.out.println("Invalid Option.");

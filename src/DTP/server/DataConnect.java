@@ -1,4 +1,8 @@
-package DTP.server.database;
+/*
+    DataConnect.java contains the methods fir connecting to the database.
+ */
+
+package DTP.server;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -6,15 +10,15 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 
-public class DataConnect {
+class DataConnect {
 
     // database vars
-    public static Connection conn;
-    public static Statement state = null;
-    public static ResultSet result = null;
+    static Connection conn;
+    static Statement state = null;
+    static ResultSet result = null;
 
     // create connection
-    public static Boolean connect(String username, String password) {
+    static Boolean connect(String username, String password) {
         try {
             String url = "jdbc:postgresql://localhost:5432/DTP.server";
             conn = DriverManager.getConnection(url, username, password);
@@ -28,7 +32,7 @@ public class DataConnect {
     }
 
     // Disconnect from database
-    public static void disconnect() {
+    static void disconnect() {
        try {
             //Closes the connection
            if (conn != null) {
