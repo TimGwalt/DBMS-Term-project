@@ -3,7 +3,7 @@
 This program was written as part of the Database Management Systems (CSCI 3700) 
 class during the fall semester of 2018.
 
-#Setup instructions:
+# Setup instructions:
 
 Using PGAdmin version 4 create a database called "DTP.server".
 Use host "localhost" and port "5432".
