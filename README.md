@@ -1,7 +1,7 @@
 # DBMS-Term-project
 
-This was written as part of the Database Management Systems (CSCI 3700) 
-class during the fall scholling semester of 2018.
+This program was written as part of the Database Management Systems (CSCI 3700) 
+class during the fall semester of 2018.
 
 Setup instructions:
 
